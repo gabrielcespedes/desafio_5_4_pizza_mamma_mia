@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from 'react-router-dom';
 
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,9 @@ function App() {
 
   return (        
     <MyContext.Provider value={estadoCompartido}>
-      <Navbar></Navbar>
+      <BrowserRouter>
+        <Navbar></Navbar>
+      </BrowserRouter>      
     </MyContext.Provider>   
   );
 }
