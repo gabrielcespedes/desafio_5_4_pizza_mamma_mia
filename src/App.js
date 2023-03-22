@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import MyContext from "./my_context";
 
+import Navbar from "./components/Navbar";
+
 function App() {
   
   const endpoint = "/pizzas.json";
@@ -18,12 +20,10 @@ function App() {
     setPizzas([...dataPizzas]);
   }
 
-  return (
-    <div>
-      <h1>React</h1>      
-      <MyContext.Provider value={estadoCompartido}>
-      </MyContext.Provider>    
-    </div>
+  return (        
+    <MyContext.Provider value={estadoCompartido}>
+      <Navbar></Navbar>
+    </MyContext.Provider>   
   );
 }
 
