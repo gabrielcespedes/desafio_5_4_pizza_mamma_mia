@@ -18,3 +18,19 @@ code {
   flex-direction: column;
   justify-content: center;
 }
+
+.galeria {
+  display: flex;
+}
+
+.foto {
+  display: inline-flex;
+  height: 300px;
+  width: 300px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: left;
+  text-shadow: 0px 0px 15px black;
+}

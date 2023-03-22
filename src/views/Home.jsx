@@ -18,8 +18,10 @@ const Home = () => {
                     <hr className="text-light fs-4"></hr>
                 </div>            
             </div>
-            <div className='grid-columns-4'>
-                <p>hola</p>
+            <div>
+                {pizzas.map(
+                    element => (<div className='foto' style={{backgroundImage: `url(${element.img})`}}>hola</div>)
+                )}
             </div>
         </>
         
