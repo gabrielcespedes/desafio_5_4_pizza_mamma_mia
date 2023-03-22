@@ -1,11 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { useEffect, useState } from "react";
 
 import MyContext from "./my_context";
 
 import Navbar from "./components/Navbar";
+
+import Home from './views/Home';
+import Carrito from './views/Carrito';
+import Pizza from './views/Pizza';
+
 
 function App() {
   
@@ -27,6 +32,11 @@ function App() {
     <MyContext.Provider value={estadoCompartido}>
       <BrowserRouter>
         <Navbar></Navbar>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/pizza' element={<Pizza></Pizza>}></Route>
+            <Route path='/carrito' element={<Carrito></Carrito>}></Route>
+          </Routes>        
       </BrowserRouter>      
     </MyContext.Provider>   
   );

@@ -1,6 +1,6 @@
 const Carrito = () => {
     return(
-        <p>Carrito</p>
+        <p className="text-dark">Carrito</p>
     )
 }
 
