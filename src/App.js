@@ -15,8 +15,8 @@ import Pizza from './views/Pizza';
 function App() {
   
   const endpoint = "/pizzas.json";
-  const [pizza, setPizzas] = useState([]);
-  const estadoCompartido = {pizza, setPizzas};
+  const [pizzas, setPizzas] = useState([]);
+  const estadoCompartido = {pizzas};
 
   useEffect(() => {
     dataPizzas();
