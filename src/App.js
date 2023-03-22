@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import MyContext from "./my_context";
+
 function App() {
   
   const endpoint = "/pizzas.json";
@@ -17,8 +19,10 @@ function App() {
   }
 
   return (
-    <div>      
-          Learn React    
+    <div>
+      <h1>React</h1>      
+      <MyContext.Provider value={estadoCompartido}>
+      </MyContext.Provider>    
     </div>
   );
 }
