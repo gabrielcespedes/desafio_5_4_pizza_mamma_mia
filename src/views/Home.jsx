@@ -1,14 +1,17 @@
 import imagen from '../delicious-pizza.jpg';
 
-import { useContext } from 'react';
+import { useContext} from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
 import MyContext from '../my_context';
 
 const Home = () => {
 
     const{pizzas} = useContext(MyContext);
 
-    console.log(pizzas);
-    
+    const navigate = useNavigate();
+
     return(
         <>
             <div style={{backgroundImage: `url(${imagen})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}} className="bg-dark text-center hero">
@@ -33,7 +36,7 @@ const Home = () => {
                                 )}
                                 <h3 className='text-center'>$ {element.price}</h3>
                                 <div className='text-center'>
-                                    <button className='btn btn-info'>Ver Más 👀</button>
+                                    <button onClick={() => navigate(`/pizza/${element.id}`)} className='btn btn-info'>Ver Más 👀</button>
                                     <button className='btn btn-danger'>Añadir 🛒</button>
                                 </div>
                             </div>

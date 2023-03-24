@@ -34,7 +34,7 @@ function App() {
         <Navbar></Navbar>
           <Routes>
             <Route path='/' element={<Home></Home>}></Route>
-            <Route path='/pizza' element={<Pizza></Pizza>}></Route>
+            <Route path='/pizza/:id' element={<Pizza></Pizza>}></Route>
             <Route path='/carrito' element={<Carrito></Carrito>}></Route>
           </Routes>        
       </BrowserRouter>      
