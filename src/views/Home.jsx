@@ -18,9 +18,27 @@ const Home = () => {
                     <hr className="text-light fs-4"></hr>
                 </div>            
             </div>
-            <div>
-                {pizzas.map(
-                    element => (<div className='foto' style={{backgroundImage: `url(${element.img})`}}>hola</div>)
+            <div className='row'>
+                {pizzas.map(                    
+                    element => (
+                    <div className='col-12 col-md-6 col-xl-3'>
+                        <div className='card m-auto my-4 tarjeta'>
+                            <img src={element.img} alt='imagen pizza' className='card-img-top'></img>
+                            <div className='card-body'>
+                                <h4>{element.name}</h4>
+                                <hr></hr>
+                                <h6>Ingredientes:</h6>
+                                {element.ingredients.map(
+                                    e => (<p>🍕 {e}</p>)
+                                )}
+                                <h3 className='text-center'>$ {element.price}</h3>
+                                <div className='text-center'>
+                                    <button className='btn btn-info'>Ver Más 👀</button>
+                                    <button className='btn btn-danger'>Añadir 🛒</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>)
                 )}
             </div>
         </>
