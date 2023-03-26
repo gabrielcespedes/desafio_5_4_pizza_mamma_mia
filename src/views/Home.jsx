@@ -23,8 +23,8 @@ const Home = () => {
             </div>
             <div className='row'>
                 {pizzas.map(                    
-                    element => (
-                    <div className='col-12 col-md-6 col-xl-3'>
+                    (element, index) => (
+                    <div key={index} className='col-12 col-md-6 col-xl-3'>
                         <div className='card m-auto my-4 tarjeta'>
                             <img src={element.img} alt='imagen pizza' className='card-img-top'></img>
                             <div className='card-body'>
@@ -32,7 +32,7 @@ const Home = () => {
                                 <hr></hr>
                                 <h6>Ingredientes:</h6>
                                 {element.ingredients.map(
-                                    e => (<p>🍕 {e}</p>)
+                                    (e, index) => (<p key={index}>🍕 {e}</p>)
                                 )}
                                 <h3 className='text-center'>$ {element.price}</h3>
                                 <div className='text-center'>
