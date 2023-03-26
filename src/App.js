@@ -25,6 +25,7 @@ function App() {
   const dataPizzas = async () => {
     const responseData = await fetch(endpoint);
     const dataPizzas = await responseData.json();
+    dataPizzas.map(element => element.amount = 0);    
     setPizzas([...dataPizzas]);
   }
 
