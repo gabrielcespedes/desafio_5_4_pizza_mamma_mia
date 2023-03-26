@@ -2,13 +2,14 @@ import { useContext} from "react";
 import MyContext from "../my_context";
 
 const Carrito = () => {
-    const {pizzas} = useContext(MyContext);
+    const {pizzas, setNavTotal} = useContext(MyContext);
 
     const calculateTotal = () => {
         let total = 0;
         pizzas.forEach((element) => {
             total += element.price * element.amount;
         });
+        setNavTotal(total);
         return total;
     }
 
@@ -22,7 +23,7 @@ const Carrito = () => {
                     if (element.amount > 0) {
                         return element;
                     }
-                }).map((element, index) => {return(<><p><img src={element.img} width="100"></img> {element.name[0].toUpperCase() + element.name.slice(1)} <span className="ms-auto">${element.price * element.amount}</span> </p>
+                }).map((element, index) => {return(<><p key={index}><img src={element.img} width="100"></img> {element.name[0].toUpperCase() + element.name.slice(1)} <span className="ms-auto">${element.price * element.amount}</span> </p>
                 <hr></hr></> )})}
                 <div className="d-flex justify-content-between">
                     <h3 className="text-dark">Total: ${calculateTotal()}                                        

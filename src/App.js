@@ -16,7 +16,8 @@ function App() {
   
   const endpoint = "/pizzas.json";
   const [pizzas, setPizzas] = useState([]);
-  const estadoCompartido = {pizzas, setPizzas};
+  const [navTotal, setNavTotal] = useState(0);
+  const estadoCompartido = {pizzas, setPizzas, navTotal, setNavTotal};
 
   useEffect(() => {
     dataPizzas();
