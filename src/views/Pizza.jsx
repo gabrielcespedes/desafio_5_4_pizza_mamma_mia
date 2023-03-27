@@ -8,12 +8,22 @@ const Pizza = () => {
 
     console.log(id)
 
-    const {pizzas} = useContext(MyContext);
+    const {pizzas, setPizzas, setNavTotal} = useContext(MyContext);
 
     console.log(pizzas)
 
-    const selectedPizza = pizzas[pizzas.findIndex((element) => element.id === id)] 
-    console.log(selectedPizza);
+    const selectedPizza = pizzas[pizzas.findIndex((element) => element.id === id)]
+    
+    const addPiza = (id) => {
+        const pizza_Id =  pizzas.findIndex((element) => element.id === id);
+        pizzas[pizza_Id].amount = pizzas[pizza_Id].amount + 1;
+        setPizzas([...pizzas]);
+        let total = 0;
+        pizzas.forEach((element) => {
+            total += element.price * element.amount;
+        });
+        setNavTotal(total);
+    }
 
     return(
         <div className="d-flex justify-content-center">
@@ -32,7 +42,7 @@ const Pizza = () => {
                         </ul>                        
                         <div className="d-flex justify-content-between">
                             <h3 className="text-dark">Precio: ${selectedPizza.price}</h3>
-                            <button className='btn btn-danger'>Añadir 🛒</button>
+                            <button className='btn btn-danger' onClick={() => addPiza(selectedPizza.id)}>Añadir 🛒</button>
                         </div>                        
                     </div>                    
                 </div>                
