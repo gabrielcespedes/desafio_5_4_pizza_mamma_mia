@@ -23,9 +23,10 @@ const Carrito = () => {
                     if (element.amount > 0) {
                         return element;
                     }
-                }).map((element, index) => {return(<><p key={index}><img src={element.img} width="100"></img> {element.name[0].toUpperCase() + element.name.slice(1)} <span className="ms-auto">${element.price * element.amount}</span> </p>
-                <hr></hr></> )})}
-                <div className="d-flex justify-content-between">
+                }).map((element, index) => {return(<div className="d-flex"><p key={index}><img src={element.img} width="100" alt="imagen pizza"></img> {element.name[0].toUpperCase() + element.name.slice(1)}</p> 
+                <p className="ms-auto">${element.price * element.amount} <button className="btn btn-danger mx-2">-</button> <strong>{element.amount}</strong> <button className="btn btn-primary mx-2">+</button> </p> 
+                <hr></hr></div> )})}
+                <div>
                     <h3 className="text-dark">Total: ${calculateTotal()}                                        
                     </h3>
                     <button className="btn btn-success">Ir a Pagar</button>

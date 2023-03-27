@@ -8,7 +8,7 @@ import MyContext from '../my_context';
 
 const Home = () => {
 
-    const{pizzas, setPizzas} = useContext(MyContext);
+    const{pizzas, setPizzas, setNavTotal} = useContext(MyContext);
 
     const navigate = useNavigate();
 
@@ -16,6 +16,11 @@ const Home = () => {
         const pizza_id = pizzas.findIndex((element) => element.id === id);
         pizzas[pizza_id].amount = pizzas[pizza_id].amount + 1;
         setPizzas([...pizzas]);
+        let total = 0;
+        pizzas.forEach((element) => {
+            total += element.price * element.amount;
+        });
+        setNavTotal(total);
     }
 
     return(
