@@ -1,7 +1,6 @@
 import imagen from '../delicious-pizza.jpg';
 
 import { useContext} from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import MyContext from '../my_context';
@@ -9,7 +8,6 @@ import MyContext from '../my_context';
 const Home = () => {
 
     const{pizzas, setPizzas, setNavTotal} = useContext(MyContext);
-
     const navigate = useNavigate();
 
     const Add_Click = (id) => {

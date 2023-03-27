@@ -33,16 +33,18 @@ const Carrito = () => {
                     if (element.amount > 0) {
                         return element;
                     }
-                }).map((element, index) => {return(<div className="d-flex"><p key={index}><img src={element.img} width="100" alt="imagen pizza"></img> {element.name[0].toUpperCase() + element.name.slice(1)}</p> 
-                <p className="ms-auto">${element.price * element.amount} 
-                <button className="btn btn-danger mx-2" onClick={() => button_minus(element.id)}>-</button> <strong>{element.amount}</strong> 
-                <button className="btn btn-primary mx-2" onClick={() => button_mas(element.id)}>+</button> </p> 
-                <hr></hr></div> )})}
-                <div>
-                    <h3 className="text-dark">Total: ${calculateTotal()}                                        
-                    </h3>
-                    <button className="btn btn-success">Ir a Pagar</button>
-                </div>                
+                }).map((element, index) => {return(
+                <div className="d-flex"><p key={index}>
+                    <img src={element.img} width="100" alt="imagen pizza"></img> {element.name[0].toUpperCase() + element.name.slice(1)}</p> 
+                    <p key={index+10} className="ms-auto">${element.price * element.amount} 
+                    <button className="btn btn-danger mx-2" onClick={() => button_minus(element.id)}>-</button> <strong>    {element.amount}</strong> 
+                    <button className="btn btn-primary mx-2" onClick={() => button_mas(element.id)}>+</button> </p> 
+                    <hr></hr></div> )})}
+                    <div>
+                        <h3 className="text-dark">Total: ${calculateTotal()}                                        
+                        </h3>
+                        <button className="btn btn-success">Ir a Pagar</button>
+                    </div>                
             </div>
         </div>        
     )

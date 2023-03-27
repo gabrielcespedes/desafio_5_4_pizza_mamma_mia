@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 import MyContext from "./my_context";
@@ -12,12 +12,10 @@ import Carrito from './views/Carrito';
 import Pizza from './views/Pizza';
 
 
-function App() {
-  
+function App() {  
   const endpoint = "/pizzas.json";
   const [pizzas, setPizzas] = useState([]);
   const [navTotal, setNavTotal] = useState(0);  
-
   const estadoCompartido = {pizzas, setPizzas, navTotal, setNavTotal};
 
   useEffect(() => {
